@@ -1,0 +1,579 @@
+@charset "utf-8";
+
+/* ブレイクポイントについて
+    デスクトップサイズ 　 それ以上
+    タブレットサイズ　　  1366px, 1180px
+    スマートフォンサイズ  960px, 520px */
+
+body {
+    background-color: #f3f0e8;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    min-height: 100%;
+    min-height: 100vh;
+    font-family: 'M PLUS 1p', sans-serif;
+}
+
+header {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 5em;
+    background-color: white;
+    color: #211000;
+}
+
+.header-left img {
+    width: 5em;
+    height: 5em;
+    line-height: 5em;
+    float: left;
+    padding-left: 2em;
+}
+
+.header-left .logo {
+    height: 2em;
+    line-height: 1.2em;
+    float: left;
+    position: absolute;
+    top: 50%;
+    left: 6em;
+    transform: translateY(-50%);
+}
+
+.header-list {
+    float: right;
+    line-height: 5em;
+    margin-left: 3em;
+    cursor: pointer;
+}
+
+.header-list p{
+    display: inline;
+    vertical-align: middle;
+    font-size: 1em;
+}
+
+.header-list a {
+    text-decoration: none;
+    color: black;
+}
+
+.header-info {
+    position: relative;
+    height: 5em;
+}
+
+.header-info a {
+    display: block;
+    padding: 0 0 5px;
+    text-decoration: none;
+}
+
+.header-info a ::after {
+    border-bottom: solid 4px black;
+    bottom: 0;
+    content: "";
+    display: block;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    width: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: auto;
+    background-color: transparent;
+}
+
+.header-info a :hover::after {
+    width: 100%;
+}
+
+.header-sns :hover {
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.header-sns i{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 2em;
+}
+
+.header-right .facebook {
+    margin-left: 5em;
+}
+
+    /* ハンバーガーメニューの表示・非表示 */
+    @media screen and (min-width: 1180px) {
+        .header-right .instagram {
+            margin-right: 3em;
+        }
+        .header-right .hamburger {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 1180px) {
+        .header-right .hamburger {
+            margin-right: 2em;
+        }
+        .header-right .header-info {
+            display: none;
+        }
+        .header-right .instagram {
+            margin-right: 0.5em;
+        }
+    }
+
+main {
+    height: 205em;
+}
+
+.top {
+    background-image: url(https://awara.info/wp-content/uploads/2014/02/215e66dbd3efecade1a4bf259243b019.jpg);
+    background-size: cover;
+    padding: 10em 0 10em 0;
+    height: 70vh;
+    position: relative;
+}
+    /* トップ画像がずれる対策 */
+    @media screen and  (max-width: 960px) {
+        .top {
+            background-position: center;
+        }
+    }
+    @media screen and (max-width: 520px) {
+        .top {
+            height: 60vh;
+        }
+        .top h1 {
+            font-size: 3em;
+            font-weight: bold;
+        }
+        .top .box {
+            width: 13em;
+            line-height: 1.5em;
+            margin: 0.5em;
+        }
+    }
+
+
+.container {
+    padding-left: 10em;
+}
+    /* 幅の調整 */
+    @media screen and  (max-width: 960px) {
+        .container {
+            padding-left: 5em;
+        }
+    }
+    @media screen and (max-width: 520px) {
+        .container {
+            padding-left: 3em;
+        }
+        .container p {
+            font-size: 0.8em;
+            padding: 0.25em 0;
+        }
+    }
+
+
+.top h1 {
+    color: #211000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5em;
+    line-height: 25px;
+    cursor: default;
+}
+
+.top .box {
+    width: 20em;
+    line-height: 2em;
+    margin: 1em;
+    background-color: #211000;
+    cursor: default;
+}
+
+.container p {
+    color: rgb(245,245,245);
+    font-size: 1em;
+    padding: 0.25em 0;
+    text-align: center;
+    letter-spacing: 0.25em
+}
+
+.bookingButtom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background: #A0BA21;
+    color: #FFF;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 1.5em 1.5em rgba(0, 0, 0, 0.3);
+    border-bottom: solid 0.5em #698106;
+    position: absolute;
+    top: 35em;
+    right: 10em;
+}
+
+.bookingButtom p {
+    font-size: 1.5em;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+    /* 予約ボタンのサイズ・位置の調整 */
+    @media screen and  (max-width: 960px) {
+        .bookingButtom {
+            position: absolute;
+            top: 35em;
+            right: 5em;
+        }
+    }
+    @media screen and (max-width: 520px) {
+        .bookingButtom {
+            width: 7em;
+            height: 7em;
+            position: absolute;
+            top: 30em;
+            right: 3em;
+        }
+        .bookingButtom p {
+            font-size: 1.2em;
+        }
+    }
+
+        /* 機能しないためとりあえずコメントアウト
+        .bookingButtom :hover {
+            -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+            border-bottom: none;
+        } */
+
+
+.bannerCovid19 {
+    width: 50em;
+    margin: 5em auto 0em auto;
+    padding: 2em 2em 2em 6em;
+    border-radius: 1em;
+    background: #6E7C06;
+    color: white;
+    opacity: .85;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+    /* バナーの長さ調節 */
+    @media screen and  (max-width: 960px) {
+        .bannerCovid19 {
+            width: 36em;
+        }
+    }
+    @media screen and (max-width: 780px) {
+        .bannerCovid19 {
+            width: 20em;
+        }
+    }
+
+
+.bannerCovid19 ::before {
+    content: '\f071';
+    font-family: "Font Awesome 5 free";
+    font-weight: 900;
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    z-index: 1;
+    color: #ff0;
+    font-size: 2.5em;
+    transform: translateY(-50%);
+}
+
+.bannerCovid19  p {
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #fff;
+    margin: 0;
+    padding: 15px 0;
+    line-height: 1.5em;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.about {
+    font-family: 'Noto Sans JP', sans-serif;
+    position: relative;
+}
+
+.title h1 {
+    margin-top: 8em;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1em;
+    color: #757863;
+    text-align: center;
+    letter-spacing: 0.2em;
+}
+
+.title h2 {
+    line-height: 0.5em;
+    font-size: 2em;
+    color: #757863;
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin-bottom: 4em;
+}
+
+.about p {
+    margin-bottom: 4em;
+    line-height: 2em;
+    font-size: 1em;
+    color: #384A33;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+.about .bigger {
+    font-size: 1.5em;
+}
+
+.about-image1 img{
+    border-radius: 1em;
+    width: 16em;
+    height: 12em;
+    opacity: 0.9;
+    position: absolute;
+    top: 10em;
+    left: 6em;
+}
+
+.about-image2 img{
+    border-radius: 1em;
+    width: 16em;
+    height: 12em;
+    opacity: 1;
+    position: absolute;
+    top: 20em;
+    right: 6em;
+}
+
+.about-image3 img{
+    border-radius: 1em;
+    width: 16em;
+    height: 12em;
+    opacity: 1;
+    position: absolute;
+    top: 37em;
+    left: 10em;
+}
+
+    /* 1366px以下は画像が文字と重なってしまうので、その対策*/
+    @media screen and (max-width: 1366px) {
+        .about-image1 img {
+            position: absolute;
+            top: 1em;
+            left: 1em;
+        }
+        .about-image2 img {
+            position: absolute;
+            right: 2em;
+        }
+        .about-image3 img {
+            position: absolute;
+            left: 2em;
+        }
+    }
+    @media screen and (max-width: 1180px) {
+        .about-image1 img {
+            display: none;
+        }
+        .about-image2 img {
+            position: absolute;
+            top: 40em;
+            right: 3em;
+        }
+        .about-image3 img {
+            position: absolute;
+            top: 40em;
+            left: 3em;
+        }
+    }
+    @media screen and  (max-width: 960px) {
+        .about-image img {
+            display: none;
+        }
+    }
+
+
+.more-details {
+    margin: 5em auto;
+    width: 15em;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 0.5em 0;
+    color: #fff;
+    background-color: #A0BA21;
+    border-radius: 2em;
+}
+
+.recommending {
+    margin: 15em 6em;
+    font-family: 'Noto Sans JP', sans-serif;
+    position: relative;
+}
+
+    /* 「おすすめ観光ルート」の画像配置 */
+    @media screen and (min-width: 1180px) {
+        .route {
+            margin: 0 auto;
+            float: left;
+            width: 25%;
+        }
+    }
+    @media screen and (max-width: 1180px) {
+        .route {
+            margin: 0 auto;
+            float: left;
+            width: 50%;
+        }
+    }
+    @media screen and (max-width: 520px) {
+        .route {
+            margin: 0 auto;
+            float: left;
+            width: 100%;
+        }
+    }
+
+
+.route img {
+    width: 95%;
+    height: 95%;
+    border-radius: 1.2em;
+}
+
+.route :hover {
+    cursor: pointer;
+    opacity: 0.8;
+    -moz-opacity: 0.8;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.route {
+    position: relative;
+}
+
+.route p {
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin: 0 7em;
+    padding: 0.5em;
+    color: white;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #A69678;
+    color: #332923;
+    position: relative;
+    height: 25em;
+    padding: 2em 6em;
+}
+
+.footer-logo img{
+    width: 6em;
+    height: 6em;
+    line-height: 6em;
+    float: left;
+}
+
+.footer-logo p {
+    line-height: 1em;
+    font-size: 2em;
+    padding-top: 0.5em;
+}
+
+.footer-info p {
+    font-size: 1em;
+    margin: auto 0 ;
+    margin-bottom: 2em;
+}
+
+.footer-sns a {
+    color: #332923;
+    font-size: 2.5em;
+}
+
+.footer-fukuiPrefecture img{
+    width: 10em;
+    height: 2em;
+    position: absolute;
+    top: 7em;
+    right: 10em;
+}
+
+.footer-katuyamaGeoPark img {
+    float: right;
+    width: 5em;
+    height: 5em;
+    position: absolute;
+    top: 10em;
+    right: 10em;
+}
+
+.footer-katuyama img{
+    width: 5em;
+    height: 5em;
+    position: absolute;
+    top: 10em;
+    right: 16em;
+}
+
+.footer-fukui img{
+    width: 5em;
+    height: 5em;
+    position: absolute;
+    top: 10em;
+    right: 22em;
+}
+
+
+    /* タブレットサイズの時に改行するものとしないものの設定 */
+    @media screen and (min-width: 1366px) {
+        .br-tablet {
+            display: none;
+        }
+    }
+    @media screen and (min-width: 1180px) and (max-width: 1366px) {
+        .br-tablet {
+            display: block;
+        }
+    }
+
+    /* スマートフォンサイズの時に改行するものとしないものの設定 */
+    @media screen and (min-width: 780px) {
+        .br-smartphone {
+            display: none;
+        }
+    }
