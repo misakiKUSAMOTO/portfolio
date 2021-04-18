@@ -1,9 +1,9 @@
 @charset "utf-8";
 
 /* ブレイクポイントについて
-    デスクトップサイズ 　 それ以上
-    タブレットサイズ　　  1366px, 1180px
-    スマートフォンサイズ  960px, 520px */
+    デスクトップサイズ 　 1180px, 1366px, それ以上
+    タブレットサイズ　　  780px, 960px
+    スマートフォンサイズ  520px, 780px */
 
 body {
     background-color: #f3f0e8;
@@ -33,7 +33,6 @@ header {
 }
 
 .header-left .logo {
-    height: 2em;
     line-height: 1.2em;
     float: left;
     position: absolute;
@@ -49,7 +48,7 @@ header {
     cursor: pointer;
 }
 
-.header-list p{
+.header-list p {
     display: inline;
     vertical-align: middle;
     font-size: 1em;
@@ -129,12 +128,32 @@ header {
         }
     }
 
-    /* iphoneでのヘッダー調整 */
-    @media screen and (max-width: 390px) {
-        .header-sns i {
-            font-size: 1em;
+    /* スマートフォンでのヘッダー調整 */
+    @media screen and (max-width: 520px) {
+        header {
+            height: 4em;
         }
-        
+        .header-left img {
+            width: 4em;
+            height: 4em;
+            line-height: 4em;
+            float: left;
+            padding-left: 1.5em;
+        }
+        .header-left .logo {
+            line-height: 1.2em;
+            font-size: 0.9em;
+            float: left;
+            position: absolute;
+            top: 50%;
+            left: 6em;
+            transform: translateY(-50%);
+        }     
+        .header-sns i{
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 1.5em;
+        }
     }
 
 
@@ -177,13 +196,16 @@ main {
             height: 60vh;
         }
         .top h1 {
-            font-size: 2em;
+            font-size: 2.5em;
             font-weight: bold;
         }
         .top .box {
-            width: 13em;
+            width: 12em;
             line-height: 1.5em;
             margin: 0.5em;
+        }
+        .top .box p {
+            font-size: 0.8em;
         }
     }
 
@@ -283,19 +305,6 @@ main {
     text-decoration: none;
 }
 
-    /* バナーの長さ調節 */
-    @media screen and  (max-width: 960px) {
-        .bannerCovid19 {
-            width: 36em;
-        }
-    }
-    @media screen and (max-width: 780px) {
-        .bannerCovid19 {
-            width: 20em;
-        }
-    }
-
-
 .bannerCovid19 ::before {
     content: '\f071';
     font-family: "Font Awesome 5 free";
@@ -303,7 +312,6 @@ main {
     position: absolute;
     left: 25px;
     top: 50%;
-    z-index: 1;
     color: #ff0;
     font-size: 2.5em;
     transform: translateY(-50%);
@@ -319,6 +327,28 @@ main {
     font-size: 1.1em;
     text-align: center;
 }
+
+    /* バナーの調節 */
+    @media screen and  (max-width: 960px) {
+        .bannerCovid19 {
+            width: 36em;
+        }
+    }
+    @media screen and (max-width: 780px) {
+        .bannerCovid19 {
+            width: 20em;
+        }
+    }
+    @media screen and (max-width: 520px) {
+        .bannerCovid19 {
+            width: 16em;
+            padding: 2em 2em 2em 5em;
+        }
+        .bannerCovid19 p {
+            font-size: 0.9em;
+        }
+    }
+
 
 .about {
     font-family: 'Noto Sans JP', sans-serif;
@@ -350,7 +380,15 @@ main {
     color: #384A33;
     text-align: center;
     letter-spacing: 0.1em;
+    padding-left: 2em;
+    padding-right: 2em;
 }
+    /* スマートフォン表示だと読みにくいのでその対策 */
+    @media screen and (max-width: 520px) {
+        .about p {
+            font-size: 0.9em;
+        }
+    }
 
 .about .bigger {
     font-size: 1.5em;
@@ -568,20 +606,23 @@ footer {
 }
 
 
-    /* タブレットサイズの時に改行するものとしないものの設定 */
+    /*改行するものとしないものの設定 */
     @media screen and (min-width: 1366px) {
         .br-tablet {
             display: none;
         }
     }
-    @media screen and (min-width: 1180px) and (max-width: 1366px) {
+    @media screen and (max-width: 520px) {
         .br-tablet {
-            display: block;
+            display: none;
         }
     }
-
-    /* スマートフォンサイズの時に改行するものとしないものの設定 */
     @media screen and (min-width: 780px) {
+        .br-smallTablet {
+            display: none;
+        }
+    }
+    @media screen and (min-width: 520px) {
         .br-smartphone {
             display: none;
         }
