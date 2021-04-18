@@ -1,164 +1,588 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dinosaur Museum</title>
-    <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://misakikusamoto.github.io/portfolio/stylesheet.css">
-    <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
-</head>
+@charset "utf-8";
 
-<body>
-    <header>
-        <div class = "header-left">
-            <img src="https://github.com/misakiKUSAMOTO/portfolio/blob/main/176907.png?raw=true" alt="logo">
-            <div class = "logo">福井県立<br>恐竜博物館</div>
-        </div>
+/* ブレイクポイントについて
+    デスクトップサイズ 　 それ以上
+    タブレットサイズ　　  1366px, 1180px
+    スマートフォンサイズ  960px, 520px */
 
-        <div class = "header-right">
-            <div class = "header-list hamburger" id = "main">
-                <i class = "fontawesome fa fa-bars" id = "hamburger"></i>
-            </div> 
-            <div class = "header-list header-sns instagram">
-                <a href=""><i class= "fab fa-instagram"></i></a>
-            </div>
-            <div class = "header-list header-sns facebook">
-                <a href=""><i class= "fab fa-facebook-f"></i></a>
-            </div>
-            <div class = "header-list header-info">
-                <a href=""><p>ショップ</p></a></div>
-            <div class = "header-list header-info">
-                <a href=""><p>カフェ&レストラン</p></div></a>
-            <div class = "header-list header-info">
-                <a href=""><p>フロアマップ</p></a> 
-            </div>
-            <div class = "header-list header-info">
-                <a href=""><p>料金</p></a>
-            </div>
-            <div class = "header-list header-info">
-                <a href=""><p>開館時間</p></a>
-            </div>
-            <div class = "header-list header-info">
-                <a href=""><p>アクセス</p></a>
-            </div> 
-        </div>
-    </header>
+body {
+    background-color: #f3f0e8;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    min-height: 100%;
+    min-height: 100vh;
+    font-family: 'M PLUS 1p', sans-serif;
+}
 
-    <main>
-        <div class = "top">
-            <div class = "container">
-                <h1>Fukui</h1>
-                <h1>Prefectual</h1>
-                <h1>Dinosaur</h1>
-                <h1>Museum</h1>
-                <div class="box">
-                    <p>福井県立恐竜博物館</p>
-                </div>
-            </div>
-        </div>
+header {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 5em;
+    background-color: white;
+    color: #211000;
+}
 
-        <a href="#" class="bookingButtom">
-            <p>ご予約は <br>こちら</p>
-        </a>
+.header-left img {
+    width: 5em;
+    height: 5em;
+    line-height: 5em;
+    float: left;
+    padding-left: 2em;
+}
 
-        <a class = "bannerCovid19" href="">
-            <p>新型コロナウイルスの影響により、<br class="br-smartphone">当館は現在予約制となっております。<br>
-            　  入館にはご予約が必要ですので<br class="br-smartphone">ご注意ください！</p>
-        </a>
+.header-left .logo {
+    height: 2em;
+    line-height: 1.2em;
+    float: left;
+    position: absolute;
+    top: 50%;
+    left: 6em;
+    transform: translateY(-50%);
+}
 
-        <div class = "about">
-            <div class = "title">
-                <h1>ABOUT</h1>
-                <h2>恐竜博物館について</h2>
-            </div>
+.header-list {
+    float: right;
+    line-height: 5em;
+    margin-left: 3em;
+    cursor: pointer;
+}
 
-            <div class = "about-image">
-                <div class = "about-image1">
-                    <img src="https://azimano.info/wp-content/uploads/2018/11/IMG_557001.jpg" alt="an egg of a dinosaur">
-                </div>
-                <div class = "about-image2">
-                    <img src="https://d2goguvysdoarq.cloudfront.net/system/note_items/photos/34930/masked.JPG?1497445223&w=600&h=600&t=r" alt="an egg of a dinosaur">
-                </div>
-                <div class = "about-image3">
-                    <img src="https://github.com/misakiKUSAMOTO/portfolio/blob/main/14.jpg?raw=true" alt="exterior">
-                </div>
-            </div>
-            
-            <p>当恐竜博物館は<span class = "bigger">世界三大恐竜博物館</span>のひとつです。<br>
-                44体もの全身骨格が展示されており、<br class="br-smartphone">失われた恐竜時代を体感することができます。<br>
-            </p>
-            <p>未知の生物・恐竜に会うことが出来るのは、<br class="br-smartphone">国内ではこの博物館だけです。<br>
-            </p>
-            <p>未だに謎多き古代生物の壮大さを、<br>
-                <span class = "bigger">原寸大のジオラマ展示</span>を通して<br class="br-smartphone">分かりやすく紹介しています。
-            </p>
-            <p><span class = "bigger">恐竜の卵の外観</span>が目印です。</p>
-            
-            <a href="#" class= "more-details">もっと詳しく</a>
-        </div>    
+.header-list p{
+    display: inline;
+    vertical-align: middle;
+    font-size: 1em;
+}
 
-        <div class = "recommending">
-            <div class = "title">
-                <h1>reccomended sightseeing route</h1>
-                <h2>おすすめの福井県観光ルート</h2>
-            </div>
+.header-list a {
+    text-decoration: none;
+    color: black;
+}
 
-            <div class = "route">
-                <div class = "route-image1">
-                    <a href=""><img src="https://github.com/misakiKUSAMOTO/portfolio/blob/main/1-IMG_4371.jpeg?raw=true" alt=""><p>恐竜を<br class = "br-tablet">満喫する</p></a>
-                </div>
-            </div>
-            <div class = "route">
-                <div class = "route-image2">
-                    <a href=""><img src="https://fupo.jp/wp-content/uploads/2019/08/d15509842140b90124d27cbab79b23c2.jpg" alt=""><p>満天の<br class = "br-tablet">星空観測</p></a>
-                </div>
-            </div>
-            <div class = "route">
-                <div class = "route-image3">
-                    <a href=""><img src="https://news.arukikata.co.jp/file_img/18051618333985058.3.jpg" alt=""><p>温泉で<br class = "br-tablet">ゆったり</p></a>
-                </div>
-            </div>
-            <div class = "route">
-                <div class = "route-image4">
-                    <a href=""><img src="https://github.com/misakiKUSAMOTO/portfolio/blob/main/gallery_bbq_08.jpg?raw=true" alt=""><p>手ぶらで<br class = "br-tablet">参加！BBQ</p></a>
-                </div>
-            </div>
-        </div>
-    </main>
+.header-info {
+    position: relative;
+    height: 5em;
+}
 
-    <footer>
-        <div class = "footer-logo">
-            <img src="https://github.com/misakiKUSAMOTO/portfolio/blob/main/176907.png?raw=true" alt="footer logo">
-            <p>福井県立<br>恐竜博物館</p>
-        </div>
-        <div class = "footer-info">
-            <p>〒911-8601<br>
-                福井県勝山市村岡町寺尾51-11  かつやま恐竜の森内<br><br>
-                tel 00-0000-0000</p><br>
-        </div>
-        <div class = "footer-sns">
-            <a href=""><i class="fab fa-instagram-square"></i></a>
-            <a href=""><i class="fab fa-twitter-square"></i></a>
-            <a href=""><i class="fab fa-youtube-square"></i></a>
-            <a href=""><i class="fab fa-facebook-square"></i></a>
-        </div>
-        <div class = "footer-fukuiPrefecture">
-            <img src="https://www.pref.fukui.lg.jp/doc/about/symbol_d/img/003.gif" alt="fukui logo">
-        </div>
-        <div class = "footer-katuyamaGeoPark">
-            <img src="https://www.city.katsuyama.fukui.jp/geopark/about/images/logo_1.jpg" alt="">
-        </div>
-        <div class = "footer-katuyama">
-            <img src="https://www.city.katsuyama.fukui.jp/uploaded/image/1913.jpg" alt="">
-        </div>
-        <div class = "footer-fukui">
-            <img src="https://uub.jp/47/fukui/fukui_kensho.png" alt="">
-        </div>
-    </div>
+.header-info a {
+    display: block;
+    padding: 0 0 5px;
+    text-decoration: none;
+}
 
-    </footer>
-</body>
-</html>
+.header-info a ::after {
+    border-bottom: solid 4px black;
+    bottom: 0;
+    content: "";
+    display: block;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    width: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: auto;
+    background-color: transparent;
+}
+
+.header-info a :hover::after {
+    width: 100%;
+}
+
+.header-sns :hover {
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.header-sns i{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 2em;
+}
+
+.header-right .facebook {
+    margin-left: 5em;
+}
+
+    /* ハンバーガーメニューの表示・非表示 */
+    @media screen and (min-width: 1180px) {
+        .header-right .instagram {
+            margin-right: 3em;
+        }
+        .header-right .hamburger {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 1180px) {
+        .header-right .hamburger {
+            margin-right: 2em;
+        }
+        .header-right .header-info {
+            display: none;
+        }
+        .header-right .instagram {
+            margin-right: 0.5em;
+        }
+    }
+
+    /* iphoneでのヘッダー調整 */
+    @media screen and (max-width: 390px) {
+        .header-sns i {
+            font-size: 1em;
+        }
+        
+    }
+
+
+main {
+    height: 205em;
+}
+
+.top {
+    background-image: url(https://awara.info/wp-content/uploads/2014/02/215e66dbd3efecade1a4bf259243b019.jpg);
+    background-size: cover;
+    padding: 10em 0 10em 0;
+    height: 70vh;
+    position: relative;
+}
+
+.top h1 {
+    color: #211000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5em;
+    line-height: 25px;
+    cursor: default;
+}
+
+.top .box {
+    width: 20em;
+    line-height: 2em;
+    margin: 1em;
+    background-color: #211000;
+    cursor: default;
+}
+
+    /* トップ画像がずれる対策 */
+    @media screen and  (max-width: 960px) {
+        .top {
+            background-position: center;
+        }
+    }
+    @media screen and (max-width: 520px) {
+        .top {
+            height: 60vh;
+        }
+        .top h1 {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .top .box {
+            width: 13em;
+            line-height: 1.5em;
+            margin: 0.5em;
+        }
+    }
+
+
+.container {
+    padding-left: 10em;
+}
+
+.container p {
+    color: rgb(245,245,245);
+    font-size: 1em;
+    padding: 0.25em 0;
+    text-align: center;
+    letter-spacing: 0.25em
+}
+    /* 幅の調整 */
+    @media screen and  (max-width: 960px) {
+        .container {
+            padding-left: 5em;
+        }
+    }
+    @media screen and (max-width: 520px) {
+        .container {
+            padding-left: 3em;
+        }
+        .container p {
+            font-size: 0.8em;
+            padding: 0.25em 0;
+        }
+    }
+
+.bookingButtom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background: #A0BA21;
+    color: #FFF;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 1.5em 1.5em rgba(0, 0, 0, 0.3);
+    border-bottom: solid 0.5em #698106;
+    position: absolute;
+    top: 35em;
+    right: 10em;
+}
+
+.bookingButtom p {
+    font-size: 1.5em;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+    /* 予約ボタンのサイズ・位置の調整 */
+    @media screen and  (max-width: 960px) {
+        .bookingButtom {
+            position: absolute;
+            top: 35em;
+            right: 5em;
+        }
+    }
+    @media screen and (max-width: 520px) {
+        .bookingButtom {
+            width: 7em;
+            height: 7em;
+            position: absolute;
+            top: 30em;
+            right: 3em;
+        }
+        .bookingButtom p {
+            font-size: 1.2em;
+        }
+    }
+
+        /* 機能しないためとりあえずコメントアウト
+        .bookingButtom :hover {
+            -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+            border-bottom: none;
+        } */
+
+
+.bannerCovid19 {
+    width: 50em;
+    margin: 5em auto 0em auto;
+    padding: 2em 2em 2em 6em;
+    border-radius: 1em;
+    background: #6E7C06;
+    color: white;
+    opacity: .85;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+    /* バナーの長さ調節 */
+    @media screen and  (max-width: 960px) {
+        .bannerCovid19 {
+            width: 36em;
+        }
+    }
+    @media screen and (max-width: 780px) {
+        .bannerCovid19 {
+            width: 20em;
+        }
+    }
+
+
+.bannerCovid19 ::before {
+    content: '\f071';
+    font-family: "Font Awesome 5 free";
+    font-weight: 900;
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    z-index: 1;
+    color: #ff0;
+    font-size: 2.5em;
+    transform: translateY(-50%);
+}
+
+.bannerCovid19  p {
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #fff;
+    margin: 0;
+    padding: 15px 0;
+    line-height: 1.5em;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.about {
+    font-family: 'Noto Sans JP', sans-serif;
+    position: relative;
+}
+
+.title h1 {
+    margin-top: 8em;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1em;
+    color: #757863;
+    text-align: center;
+    letter-spacing: 0.2em;
+}
+
+.title h2 {
+    line-height: 0.5em;
+    font-size: 2em;
+    color: #757863;
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin-bottom: 4em;
+}
+
+.about p {
+    margin-bottom: 4em;
+    line-height: 2em;
+    font-size: 1em;
+    color: #384A33;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+.about .bigger {
+    font-size: 1.5em;
+}
+
+.about-image1 img{
+    border-radius: 1em;
+    width: 16em;
+    height: 12em;
+    opacity: 0.9;
+    position: absolute;
+    top: 10em;
+    left: 6em;
+}
+
+.about-image2 img{
+    border-radius: 1em;
+    width: 16em;
+    height: 12em;
+    opacity: 1;
+    position: absolute;
+    top: 20em;
+    right: 6em;
+}
+
+.about-image3 img{
+    border-radius: 1em;
+    width: 16em;
+    height: 12em;
+    opacity: 1;
+    position: absolute;
+    top: 37em;
+    left: 10em;
+}
+
+    /* 1366px以下は画像が文字と重なってしまうので、その対策*/
+    @media screen and (max-width: 1366px) {
+        .about-image1 img {
+            position: absolute;
+            top: 1em;
+            left: 1em;
+        }
+        .about-image2 img {
+            position: absolute;
+            right: 2em;
+        }
+        .about-image3 img {
+            position: absolute;
+            left: 2em;
+        }
+    }
+    @media screen and (max-width: 1180px) {
+        .about-image1 img {
+            display: none;
+        }
+        .about-image2 img {
+            position: absolute;
+            top: 40em;
+            right: 3em;
+        }
+        .about-image3 img {
+            position: absolute;
+            top: 40em;
+            left: 3em;
+        }
+    }
+    @media screen and  (max-width: 960px) {
+        .about-image img {
+            display: none;
+        }
+    }
+
+
+.more-details {
+    margin: 5em auto;
+    width: 15em;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 0.5em 0;
+    color: #fff;
+    background-color: #A0BA21;
+    border-radius: 2em;
+}
+
+.recommending {
+    margin: 15em 6em;
+    font-family: 'Noto Sans JP', sans-serif;
+    position: relative;
+}
+
+    /* 「おすすめ観光ルート」の画像配置 */
+    @media screen and (min-width: 1180px) {
+        .route {
+            margin: 0 auto;
+            float: left;
+            width: 25%;
+        }
+    }
+    @media screen and (max-width: 1180px) {
+        .route {
+            margin: 0 auto;
+            float: left;
+            width: 50%;
+        }
+    }
+    @media screen and (max-width: 520px) {
+        .route {
+            margin: 0 auto;
+            float: left;
+            width: 100%;
+        }
+    }
+
+
+.route img {
+    width: 95%;
+    height: 95%;
+    border-radius: 1.2em;
+}
+
+.route :hover {
+    cursor: pointer;
+    opacity: 0.8;
+    -moz-opacity: 0.8;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.route {
+    position: relative;
+}
+
+.route p {
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin: 0 7em;
+    padding: 0.5em;
+    color: white;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #A69678;
+    color: #332923;
+    position: relative;
+    height: 25em;
+    padding: 2em 6em;
+}
+
+.footer-logo img{
+    width: 6em;
+    height: 6em;
+    line-height: 6em;
+    float: left;
+}
+
+.footer-logo p {
+    line-height: 1em;
+    font-size: 2em;
+    padding-top: 0.5em;
+}
+
+.footer-info p {
+    font-size: 1em;
+    margin: auto 0 ;
+    margin-bottom: 2em;
+}
+
+.footer-sns a {
+    color: #332923;
+    font-size: 2.5em;
+}
+
+.footer-fukuiPrefecture img{
+    width: 10em;
+    height: 2em;
+    position: absolute;
+    top: 7em;
+    right: 10em;
+}
+
+.footer-katuyamaGeoPark img {
+    float: right;
+    width: 5em;
+    height: 5em;
+    position: absolute;
+    top: 10em;
+    right: 10em;
+}
+
+.footer-katuyama img{
+    width: 5em;
+    height: 5em;
+    position: absolute;
+    top: 10em;
+    right: 16em;
+}
+
+.footer-fukui img{
+    width: 5em;
+    height: 5em;
+    position: absolute;
+    top: 10em;
+    right: 22em;
+}
+
+
+    /* タブレットサイズの時に改行するものとしないものの設定 */
+    @media screen and (min-width: 1366px) {
+        .br-tablet {
+            display: none;
+        }
+    }
+    @media screen and (min-width: 1180px) and (max-width: 1366px) {
+        .br-tablet {
+            display: block;
+        }
+    }
+
+    /* スマートフォンサイズの時に改行するものとしないものの設定 */
+    @media screen and (min-width: 780px) {
+        .br-smartphone {
+            display: none;
+        }
+    }
