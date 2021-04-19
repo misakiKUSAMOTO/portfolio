@@ -193,7 +193,7 @@ main {
     }
     @media screen and (max-width: 520px) {
         .top {
-            height: 60vh;
+            height: 55vh;
         }
         .top h1 {
             font-size: 2.5em;
@@ -383,12 +383,13 @@ main {
     padding-left: 2em;
     padding-right: 2em;
 }
-    /* スマートフォン表示だと読みにくいのでその対策 */
+
     @media screen and (max-width: 520px) {
         .about p {
-            font-size: 0.9em;
+            font-size: 0.8em;
         }
     }
+
 
 .about .bigger {
     font-size: 1.5em;
