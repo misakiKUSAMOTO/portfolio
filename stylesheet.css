@@ -191,6 +191,11 @@ main {
             background-position: center;
         }
     }
+    @media screen and (max-width: 780px {
+        .top h1 {
+            font-size: 3.5em;
+        }
+    }
     @media screen and (max-width: 520px) {
         .top {
             height: 55vh;
@@ -267,6 +272,12 @@ main {
             position: absolute;
             top: 35em;
             right: 5em;
+        }
+    }
+    @media screen and  (max-width: 780px) {
+        .bookingButtom {
+            width: 8.5em;
+            height: 8.5em;
         }
     }
     @media screen and (max-width: 520px) {
